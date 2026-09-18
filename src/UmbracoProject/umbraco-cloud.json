@@ -1,1 +1,17 @@
-{}
+{
+  "Deploy": {
+    "Project": {
+      "Workspaces": []
+    },
+    "Settings": {}
+  },
+  "Identity": {
+    "AadInstancePath": "https://identity-dev.umbraco.com",
+    "ClientId": "436cf11f-59eb-41c8-90c8-91f172386942",
+    "ClientSecret": "sfgM04UHXCGPe821C-R_5o.e.Por~Y7T0p",
+    "EnvironmentId": "c5ef5996-5624-4d8e-acc6-1527dca34c06",
+    "LocalLoginRedirectUri": "https://redirect.identity-dev.umbraco.com",
+    "Tenant": "umbracoiddev.onmicrosoft.com",
+    "TenantId": "948da452-daba-4a0b-8b16-c91433e8f27d"
+  }
+}
