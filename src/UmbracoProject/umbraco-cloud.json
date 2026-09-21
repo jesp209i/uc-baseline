@@ -13,7 +13,9 @@
         }
       ]
     },
-    "Settings": {}
+    "Settings": {
+      "ApiKey": "CEDAB5909D73E2DA2E921DF66EBB32736CDF4FD1"
+    }
   },
   "Identity": {
     "AadInstancePath": "https://identity-dev.umbraco.com",
