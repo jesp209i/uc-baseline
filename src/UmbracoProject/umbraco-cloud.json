@@ -1,7 +1,17 @@
 {
   "Deploy": {
     "Project": {
-      "Workspaces": []
+      "Name": "do a project create normally",
+      "Alias": "do-a-project-create-normally",
+      "Id": "4015dbc8-777f-48fc-8c75-23ff4ef72764",
+      "Workspaces": [
+        {
+          "Id": "c5ef5996-5624-4d8e-acc6-1527dca34c06",
+          "Name": "Live",
+          "Type": "live",
+          "Url": "https://do-a-project-create-normally.euwest01.rainbowsrock.net"
+        }
+      ]
     },
     "Settings": {}
   },
