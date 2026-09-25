@@ -52,7 +52,7 @@ on:
 
 jobs:
   startDeployment:
-    name: Start Baseline Deployment
+    name: Start Baseline Child Deployment
     runs-on: ubuntu-latest
     outputs:
       runningDeploymentId: ${{ steps.requestStartDeployment.outputs.deploymentId }}
@@ -79,19 +79,19 @@ jobs:
           GITHUB
 
   awaitDeploymentFinished:
-    name: Await deployment to finish
+    name: Await baseline child deployment to finish
     runs-on: ubuntu-latest
     needs: startDeployment
     steps:
       - uses: actions/checkout@v6
 
       # Poll until deployment finishes 
-      - name: Wait for deployment completed
+      - name: Wait for baseline child deployment completed
         shell: bash
         env: 
           runningDeploymentId: ${{ needs.startDeployment.outputs.runningDeploymentId }}
         run: >
-          bash ${{ GITHUB.WORKSPACE }}/.github/scripts/get_deployment_status.sh 
+          bash ${{ GITHUB.WORKSPACE }}/.github/scripts/get_baseline_deployment_status.sh 
           ${{ secrets.projectId }} 
           ${{ secrets.umbracoCloudApiKey }} 
           ${{ env.runningDeploymentId }} 

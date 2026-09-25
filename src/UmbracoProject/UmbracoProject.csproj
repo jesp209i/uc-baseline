@@ -15,7 +15,7 @@
     <PackageReference Include="Umbraco.Cloud.StorageProviders.AzureBlob" />
     <PackageReference Include="Umbraco.Cloud.Cms" />
   </ItemGroup>
-<!-- hest -->
+
   <PropertyGroup>
     <!--
       Opt-in to app-local ICU to ensure consistent globalization APIs across different platforms.
