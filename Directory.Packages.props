@@ -13,7 +13,7 @@
     <PackageVersion Include="Umbraco.Cms" Version="18.2.0" />
     <PackageVersion Include="Umbraco.Cms.DevelopmentMode.Backoffice" Version="18.2.0" />
     <PackageVersion Include="Microsoft.ICU.ICU4C.Runtime" Version="$(UmbracoAppLocalIcuVersion)" />
-    <PackageVersion Include="Umbraco.Forms" Version="18.1.2" />
+    <PackageVersion Include="Umbraco.Forms" Version="18.1.3" />
     <PackageVersion Include="Umbraco.Forms.Deploy" Version="18.0.1" />
     <PackageVersion Include="Umbraco.Deploy.Cloud" Version="18.1.0" />
     <PackageVersion Include="Umbraco.Cloud.StorageProviders.AzureBlob" Version="18.0.0" />
