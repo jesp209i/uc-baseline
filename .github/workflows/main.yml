@@ -77,3 +77,20 @@ jobs:
     secrets:
       projectId: ${{ secrets.PROJECT_ID }}
       umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
+  
+  cloud-baseline-deployment:
+    name: "Deploy to Cloud baseline"
+    #needs: [set-env, cloud-artifact]
+    needs: [cloud-artifact]
+    uses: ./.github/workflows/cloud-baseline-deployment.yml
+    with:
+      artifactId: ${{ needs.cloud-artifact.outputs.artifactId }}
+      targetProjectId: "7c39e694-87c9-42d1-8e92-31450992f5d3"
+      targetEnvironmentAlias: "live"
+      noBuildAndRestore: "true"
+      skipVersionCheck: "false"
+      skipPreserveUmbracoCloudJson: "false"
+      runSchemaExtraction: "true"
+    secrets:
+      projectId: ${{ secrets.PROJECT_ID }}
+      umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
