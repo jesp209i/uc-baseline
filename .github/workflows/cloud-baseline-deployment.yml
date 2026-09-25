@@ -20,6 +20,10 @@ on:
       artifactId:
         required: true
         type: string
+      targetProjectId:
+        description: 'The target project id to deploy to'
+        required: true
+        type: string
       targetEnvironmentAlias:
         description: 'The target environment alias to deploy to'
         required: true
