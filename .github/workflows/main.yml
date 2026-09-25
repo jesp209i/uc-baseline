@@ -80,12 +80,42 @@ jobs:
   
   cloud-baseline-deployment:
     name: "Deploy to Cloud baseline"
-    #needs: [set-env, cloud-artifact]
-    needs: [cloud-artifact]
+    needs: [cloud-artifact, cloud-deployment]
     uses: ./.github/workflows/cloud-baseline-deployment.yml
     with:
       artifactId: ${{ needs.cloud-artifact.outputs.artifactId }}
       targetProjectId: "7c39e694-87c9-42d1-8e92-31450992f5d3"
+      targetEnvironmentAlias: "live"
+      noBuildAndRestore: "true"
+      skipVersionCheck: "false"
+      runSchemaExtraction: "true"
+    secrets:
+      projectId: ${{ secrets.PROJECT_ID }}
+      umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
+
+  cloud-baseline-deployment2:
+    name: "Deploy to Cloud baseline"
+    needs: [cloud-artifact, cloud-deployment]
+    uses: ./.github/workflows/cloud-baseline-deployment.yml
+    with:
+      artifactId: ${{ needs.cloud-artifact.outputs.artifactId }}
+      targetProjectId: "8fd9d24c-8b99-4784-84af-55a76d4989de"
+      targetEnvironmentAlias: "dev"
+      noBuildAndRestore: "true"
+      skipVersionCheck: "false"
+      runSchemaExtraction: "true"
+    secrets:
+      projectId: ${{ secrets.PROJECT_ID }}
+      umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
+
+
+  cloud-baseline-deployment3:
+    name: "Deploy to Cloud baseline"
+    needs: [cloud-artifact, cloud-baseline-deployment2]
+    uses: ./.github/workflows/cloud-baseline-deployment.yml
+    with:
+      artifactId: ${{ needs.cloud-artifact.outputs.artifactId }}
+      targetProjectId: "8fd9d24c-8b99-4784-84af-55a76d4989de"
       targetEnvironmentAlias: "live"
       noBuildAndRestore: "true"
       skipVersionCheck: "false"
