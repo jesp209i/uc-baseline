@@ -15,7 +15,7 @@ deploymentId="$3"
 timeoutSeconds="${4:-1200}"
 
 # Not required, defaults to https://api.cloud.umbraco.com
-baseUrl="${5:-https://api.cloud.umbraco.com}"
+baseUrl="${5:-https://api.dev-cloud.umbraco.com}"
 
 for requiredVariable in baselineProjectId apiKey deploymentId; do
   if [[ -z "${!requiredVariable}" ]]; then
