@@ -195,7 +195,7 @@ publish/
 PublishScripts/
 
 # NuGet Packages
-*.nupkg
+#*.nupkg
 # NuGet Symbol Packages
 *.snupkg
 # The packages folder can be ignored because of Package Restore
@@ -414,5 +414,3 @@ healthchecksdb
 **/Views/Partials/Forms/Export/excel.cshtml
 **/Views/Partials/Forms/Themes/bootstrap3-horizontal/
 **/Views/Partials/Forms/Themes/default/
-
-**/git-patch.diff
